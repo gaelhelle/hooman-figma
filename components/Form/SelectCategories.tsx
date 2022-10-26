@@ -1,13 +1,8 @@
-import { Iconly } from "react-iconly";
-import FormActions from "./FormActions";
-import FormImageInput from "./FormImageInput";
-import FormInput from "./FormInput";
-
 import { Listbox } from "@headlessui/react";
 import { categories } from "../../data";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 
-const SelectCategories = () => {
+const SelectCategories = forwardRef((props, ref) => {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
   return (
@@ -15,9 +10,9 @@ const SelectCategories = () => {
       <Listbox value={selectedCategory} onChange={setSelectedCategory}>
         {({ open }) => (
           <>
-            <div className="relative  w-full min-w-[185px]">
+            <div className="relative w-full min-w-[185px]">
               <Listbox.Button className="px-4 h-8 cursor-pointer flex items-center justify-between w-full bg-[color:var(--theme-navy-darker)] rounded-lg font-light text-sm">
-                <span>{selectedCategory.name}</span>
+                <span ref={ref}>{selectedCategory.name}</span>
                 <div className="pointer-events-none">
                   <svg
                     width="10"
@@ -51,6 +46,6 @@ const SelectCategories = () => {
       </Listbox>
     </div>
   );
-};
+});
 
 export default SelectCategories;

@@ -1,27 +1,79 @@
-# Next.js + Tailwind CSS Example
+<a name="readme-top"></a>
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## Deploy your own
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+  <h3 align="center">Hooman - Figma integration</h3>
+</div>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+<!-- ABOUT THE PROJECT -->
 
-## How to use
+## About The Project
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+[![Product Name Screen Shot][product-screenshot]]()
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
+### Built With
+
+- [![React][react.js]][react-url]
+- [![Next][next.js]][next-url]
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+### Prerequisites
+
+Install npm dependencies :
+
+```sh
+npm i
 ```
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+### Run the project
+
+```sh
+npm run dev
 ```
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+[contributors-shield]: https://img.shields.io/github/contributors/hooman-figma?style=for-the-badge
+[contributors-url]: https://github.com/hooman-figma/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/hooman-figma.svg?style=for-the-badge
+[forks-url]: https://github.com/hooman-figma/network/members
+[stars-shield]: https://img.shields.io/github/stars/hooman-figma.svg?style=for-the-badge
+[stars-url]: https://github.com/hooman-figma/stargazers
+[issues-shield]: https://img.shields.io/github/issues/hooman-figma.svg?style=for-the-badge
+[issues-url]: https://github.com/hooman-figma/issues
+[license-shield]: https://img.shields.io/github/license/hooman-figma.svg?style=for-the-badge
+[license-url]: https://github.com/hooman-figma/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/gael
+[product-screenshot]: public/assets/thumbnail.png
+[next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[next-url]: https://nextjs.org/
+[react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[react-url]: https://reactjs.org/
+[tailwind]: https://img.shields.io/badge/Tailwind-41bdf8?style=for-the-badge
+[tailwind-url]: https://tailwindcss.com/
+[solana]: https://img.shields.io/badge/Solana-14f195?style=for-the-badge
+[solana-url]: https://solana.com/
+[vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[vue-url]: https://vuejs.org/
+[angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
+[angular-url]: https://angular.io/
+[svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
+[svelte-url]: https://svelte.dev/
+[laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
+[laravel-url]: https://laravel.com
+[bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[bootstrap-url]: https://getbootstrap.com
+[jquery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
+[jquery-url]: https://jquery.com

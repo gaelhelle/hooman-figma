@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Hooman - Figma Challenge</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
           <Sidebar />
         </div>
         <section className="shadow-theme-main flex-1 h-full rounded-theme-main">
-          <ArticleForm id="1" />
+          <ArticleForm />
         </section>
       </main>
     </>

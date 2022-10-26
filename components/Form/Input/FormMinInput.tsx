@@ -1,4 +1,6 @@
-const FormMinInput = () => {
+import { forwardRef } from "react";
+
+const FormMinInput = forwardRef((props, ref) => {
   return (
     <div className="bg-[color:var(--theme-navy-darker)] rounded-lg font-light text-sm px-3 flex items-center justify-center cursor-pointer w-[70px] h-8 relative  focus-within:outline outline-white/20 ">
       <input
@@ -6,12 +8,13 @@ const FormMinInput = () => {
         type="text"
         pattern="\d*"
         maxLength={2}
+        ref={ref}
       />
       <label className=" text-lg block absolute top-0 text-[color:var(--theme-navy-dark)] right-2">
         min
       </label>
     </div>
   );
-};
+});
 
 export default FormMinInput;

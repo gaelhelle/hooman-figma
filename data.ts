@@ -39,21 +39,14 @@ export const data = {
       icon: { name: "Category" },
     },
   ],
-  articles: [
-    {
-      id: "1",
-      title:
-        "Zhang v. USCIS: the profound impact of loans as a source of funds for investors investors",
-      image: "",
-      date: "",
-      category: "",
-      metadescription: "",
-      pageTitleTag: "",
-    },
-  ],
 };
 
-export const wysiwygOptions = [
+export type WysiwygOptionsType = {
+  name: string;
+  icon: string;
+};
+
+export const wysiwygOptions: WysiwygOptionsType[] = [
   {
     name: "h2",
     icon: "h2.svg",

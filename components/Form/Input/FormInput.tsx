@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import React, { forwardRef, useCallback, useState } from "react";
 import { wysiwygOptions } from "../../../data";
 import FormWysiwyg from "../FormWysiwyg";
 import FormWysiwygToolbar from "../FormWysiwygToolbar";
@@ -13,7 +13,8 @@ type FormInputType = {
   wysiwyg?: boolean;
 };
 
-const FormInput = (props: FormInputType) => {
+// const FormInput = (props: FormInputType) => {
+const FormInput = forwardRef((props: FormInputType, ref) => {
   const {
     title,
     titleInset,
@@ -28,8 +29,8 @@ const FormInput = (props: FormInputType) => {
 
   let sizeClass = "text-md";
 
-  const handleChange = (event) => {
-    setInputValue(event.target.value);
+  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
+    setInputValue(event.currentTarget.value);
   };
 
   if (size === "lg") {
@@ -60,9 +61,10 @@ const FormInput = (props: FormInputType) => {
         )}
 
         {wysiwyg ? (
-          <FormWysiwyg />
+          <FormWysiwyg ref={ref} />
         ) : multiLine ? (
           <textarea
+            ref={ref}
             className={`bg-transparent w-full px-6 py-6 outline-none resize-none h-[107px] ${sizeClass}`}
             value={inputValud}
             rows={1}
@@ -71,6 +73,7 @@ const FormInput = (props: FormInputType) => {
           />
         ) : (
           <input
+            ref={ref}
             className={`bg-transparent w-full outline-none px-6 font-light placeholder-[color:var(--theme-navy-dark)] ${sizeClass} ${
               titleInset && size !== "sm" ? "pt-8" : ""
             } ${size === "sm" ? "py-1" : "py-4"}`}
@@ -83,6 +86,6 @@ const FormInput = (props: FormInputType) => {
       </div>
     </div>
   );
-};
+});
 
 export default FormInput;

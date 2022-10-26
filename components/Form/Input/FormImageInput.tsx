@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import { Iconly } from "react-iconly";
 import FormInput from "./FormInput";
 
-const FormImageInput = () => {
+const FormImageInput = forwardRef((props, ref) => {
+  const { imageRef, imageDescRef } = ref;
+
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState("");
 
@@ -18,13 +20,13 @@ const FormImageInput = () => {
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedFile]);
 
-  const onSelectFile = (e) => {
-    if (!e.target.files || e.target.files.length === 0) {
+  const onSelectFile = (event: React.FormEvent<HTMLInputElement>) => {
+    if (!event.target.files || event.target.files.length === 0) {
       setSelectedFile(undefined);
       return;
     }
 
-    setSelectedFile(e.target.files[0]);
+    setSelectedFile(event.target.files[0]);
   };
 
   return (
@@ -35,6 +37,7 @@ const FormImageInput = () => {
           className="h-full w-full absolute left-0 right-0 top-0 opacity-0 cursor-pointer"
           accept="image/*"
           onChange={onSelectFile}
+          ref={imageRef}
         />
         {selectedFile ? (
           <img src={preview} className="h-10" />
@@ -43,10 +46,16 @@ const FormImageInput = () => {
         )}
       </div>
       <div>
-        <FormInput title="Image description" titleInset id="image" size="sm" />
+        <FormInput
+          title="Image description"
+          titleInset
+          id="image"
+          size="sm"
+          ref={imageDescRef}
+        />
       </div>
     </div>
   );
-};
+});
 
 export default FormImageInput;

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import { createEditor } from "slate";
 import { Slate, Editable, withReact } from "slate-react";
 
@@ -12,10 +12,16 @@ const initialValue = [
 const PARAGRAPH_STYLES = ["h2", "h3", "h4"];
 const CHARACTER_STYLES = ["bold", "italic", "underline", "code"];
 
-const FormWysiwyg = () => {
+const FormWysiwyg = forwardRef((props, ref) => {
   const divRef = useRef(null);
   const [editorHeight, setEditorHeight] = useState();
+  const [editorValue, setEditorValue] = useState("");
   const [editor] = useState(() => withReact(createEditor()));
+
+  const handleChange = (e) => {
+    const content = JSON.stringify(e);
+    setEditorValue(content);
+  };
 
   const renderElement = useCallback(({ attributes, children, element }) => {
     switch (element.type) {
@@ -45,7 +51,7 @@ const FormWysiwyg = () => {
 
   return (
     <div className="h-full" ref={divRef}>
-      <Slate editor={editor} value={initialValue}>
+      <Slate editor={editor} value={initialValue} onChange={handleChange}>
         <Editable
           renderElement={renderElement}
           style={{
@@ -54,8 +60,11 @@ const FormWysiwyg = () => {
           className="p-4 !absolute top-0 left-0 right-0 overflow-hidden font-light"
         />
       </Slate>
+      <div ref={ref} className="hidden">
+        {editorValue}
+      </div>
     </div>
   );
-};
+});
 
 export default FormWysiwyg;
