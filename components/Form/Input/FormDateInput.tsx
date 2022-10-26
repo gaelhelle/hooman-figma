@@ -7,6 +7,7 @@ const FormDateInput = forwardRef((props, ref) => {
         Date
       </label>
       <input
+        // @ts-ignore
         ref={ref}
         readOnly
         value="03.25.20"

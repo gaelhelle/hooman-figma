@@ -64,15 +64,18 @@ const FormInput = forwardRef((props: FormInputType, ref) => {
           <FormWysiwyg ref={ref} />
         ) : multiLine ? (
           <textarea
+            // @ts-ignore
             ref={ref}
             className={`bg-transparent w-full px-6 py-6 outline-none resize-none h-[107px] ${sizeClass}`}
             value={inputValud}
             rows={1}
             max-rows={3}
+            // @ts-ignore
             onChange={handleChange}
           />
         ) : (
           <input
+            // @ts-ignore
             ref={ref}
             className={`bg-transparent w-full outline-none px-6 font-light placeholder-[color:var(--theme-navy-dark)] ${sizeClass} ${
               titleInset && size !== "sm" ? "pt-8" : ""

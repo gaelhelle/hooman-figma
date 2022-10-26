@@ -3,6 +3,7 @@ import { Iconly } from "react-iconly";
 import FormInput from "./FormInput";
 
 const FormImageInput = forwardRef((props, ref) => {
+  // @ts-ignore
   const { imageRef, imageDescRef } = ref;
 
   const [selectedFile, setSelectedFile] = useState();
@@ -20,7 +21,7 @@ const FormImageInput = forwardRef((props, ref) => {
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedFile]);
 
-  const onSelectFile = (event: React.FormEvent<HTMLInputElement>) => {
+  const onSelectFile = (event: any) => {
     if (!event.target.files || event.target.files.length === 0) {
       setSelectedFile(undefined);
       return;

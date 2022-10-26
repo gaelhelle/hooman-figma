@@ -8,6 +8,7 @@ const FormMinInput = forwardRef((props, ref) => {
         type="text"
         pattern="\d*"
         maxLength={2}
+        // @ts-ignore
         ref={ref}
       />
       <label className=" text-lg block absolute top-0 text-[color:var(--theme-navy-dark)] right-2">

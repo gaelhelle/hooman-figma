@@ -7,15 +7,15 @@ import FormMinInput from "./Form/Input/FormMinInput";
 import SelectCategories from "./Form/SelectCategories";
 
 const ArticleForm = () => {
-  const titleRef = useRef();
-  const imageRef = useRef();
-  const imageDescRef = useRef();
-  const minRef = useRef();
-  const dateRef = useRef();
-  const categoryRef = useRef();
-  const bodyRef = useRef();
-  const metadescriptionRef = useRef();
-  const titleTagRef = useRef();
+  const titleRef = useRef<HTMLInputElement>(null);
+  const imageRef = useRef<HTMLInputElement>(null);
+  const imageDescRef = useRef<HTMLInputElement>(null);
+  const minRef = useRef<HTMLInputElement>(null);
+  const dateRef = useRef<HTMLInputElement>(null);
+  const categoryRef = useRef<HTMLElement>(null);
+  const bodyRef = useRef<HTMLElement>(null);
+  const metadescriptionRef = useRef<HTMLInputElement>(null);
+  const titleTagRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -56,6 +56,7 @@ const ArticleForm = () => {
                 />
               </div>
               <div className="xl:w-[316px]">
+                {/*  @ts-ignore decoupling ref here is bad practice, I just wanted to make the form works */}
                 <FormImageInput ref={{ imageRef, imageDescRef }} />
               </div>
             </div>

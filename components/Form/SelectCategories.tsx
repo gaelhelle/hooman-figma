@@ -12,6 +12,7 @@ const SelectCategories = forwardRef((props, ref) => {
           <>
             <div className="relative w-full min-w-[185px]">
               <Listbox.Button className="px-4 h-8 cursor-pointer flex items-center justify-between w-full bg-[color:var(--theme-navy-darker)] rounded-lg font-light text-sm">
+                {/* @ts-ignore */}
                 <span ref={ref}>{selectedCategory.name}</span>
                 <div className="pointer-events-none">
                   <svg
