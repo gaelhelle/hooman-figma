@@ -58,7 +58,7 @@ const FormWysiwyg = forwardRef((props, ref) => {
           style={{
             height: editorHeight,
           }}
-          className="p-4 !absolute top-0 left-0 right-0 overflow-hidden font-light"
+          className="p-4 !absolute top-0 left-0 right-0 overflow-hidden font-light overflow-x-hidden overflow-y-scroll show-scrollbar"
         />
       </Slate>
       {/* @ts-ignore */}

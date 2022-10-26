@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.show-scrollbar::-webkit-scrollbar {
+  width: 20px;
+}
+
+.show-scrollbar::-webkit-scrollbar-track {
+  background: none;
+}
+
+.show-scrollbar::-webkit-scrollbar-thumb {
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  border-radius: 20px;
+  background-color: var(--theme-primary);
+}
+
 @font-face {
   font-family: "SupremeLL";
   src: url("../public/assets/fonts/SupremeLL/SupremeLLWeb-Light.woff")
