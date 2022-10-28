@@ -1,6 +1,9 @@
 import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import { createEditor } from "slate";
 import { Slate, Editable, withReact } from "slate-react";
+import { wysiwygOptions } from "../../data";
+import { SlateElement, SlateLeaf } from "../../utils/SlateEditorUtils";
+import FormWysiwygToolbar from "./FormWysiwygToolbar";
 
 const initialValue = [
   {
@@ -10,7 +13,7 @@ const initialValue = [
 ];
 
 const FormWysiwyg = forwardRef((props, ref) => {
-  const divRef = useRef(null);
+  const divRef = useRef<HTMLDivElement>(null);
   const [editorHeight, setEditorHeight] = useState<number>();
   const [editorValue, setEditorValue] = useState("");
   const [editor] = useState(() => withReact(createEditor()));
@@ -21,29 +24,17 @@ const FormWysiwyg = forwardRef((props, ref) => {
   };
 
   const renderElement = useCallback(
-    ({ attributes, children, element }: any) => {
-      switch (element.type) {
-        case "quote":
-          return <blockquote {...attributes}>{children}</blockquote>;
-        case "link":
-          return (
-            <a {...attributes} href={element.url}>
-              {children}
-            </a>
-          );
-        default:
-          return <p {...attributes}>{children}</p>;
-      }
-    },
+    (props: any) => <SlateElement {...props} />,
     []
   );
+  const renderLeaf = useCallback((props: any) => <SlateLeaf {...props} />, []);
 
   useEffect(() => {
     handleResize();
 
     function handleResize() {
-      /*  @ts-ignore */
-      setEditorHeight(divRef?.current?.offsetHeight - 20);
+      if (!divRef.current) return;
+      setEditorHeight(divRef.current.offsetHeight - 20);
     }
 
     window.addEventListener("resize", handleResize);
@@ -53,8 +44,12 @@ const FormWysiwyg = forwardRef((props, ref) => {
   return (
     <div className="h-full" ref={divRef}>
       <Slate editor={editor} value={initialValue} onChange={handleChange}>
+        <div className="absolute left-20 -top-10">
+          <FormWysiwygToolbar options={wysiwygOptions} />
+        </div>
         <Editable
           renderElement={renderElement}
+          renderLeaf={renderLeaf}
           style={{
             height: editorHeight,
           }}

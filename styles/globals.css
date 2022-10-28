@@ -17,6 +17,17 @@
   background-color: var(--theme-primary);
 }
 
+div[data-slate-editor="true"] h2 {
+  font-size: 2rem;
+}
+div[data-slate-editor="true"] h3 {
+  font-size: 1.5rem;
+}
+div[data-slate-editor="true"] ol {
+  list-style: decimal;
+  padding-left: 20px;
+}
+
 @font-face {
   font-family: "SupremeLL";
   src: url("../public/assets/fonts/SupremeLL/SupremeLLWeb-Light.woff")

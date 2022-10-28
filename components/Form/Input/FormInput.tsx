@@ -47,7 +47,6 @@ const FormInput = forwardRef((props: FormInputType, ref) => {
           >
             {title}
           </label>
-          {wysiwyg && <FormWysiwygToolbar options={wysiwygOptions} />}
         </div>
       )}
       <div className="rounded-theme-main bg-[color:var(--theme-navy-darker)] focus-within:outline outline-white/20 relative flex-1">

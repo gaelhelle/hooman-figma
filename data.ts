@@ -43,36 +43,44 @@ export const data = {
 
 export type WysiwygOptionsType = {
   name: string;
+  type: "block" | "mark";
   icon: string;
 };
 
 export const wysiwygOptions: WysiwygOptionsType[] = [
   {
-    name: "h2",
+    name: "heading-two",
+    type: "block",
     icon: "h2.svg",
   },
   {
-    name: "h3",
+    name: "heading-three",
+    type: "block",
     icon: "h3.svg",
   },
   {
     name: "bold",
+    type: "mark",
     icon: "bold.svg",
   },
   {
     name: "italic",
+    type: "mark",
     icon: "italic.svg",
   },
   {
     name: "link",
+    type: "mark",
     icon: "link.svg",
   },
   {
-    name: "u-list",
+    name: "list-item",
+    type: "block",
     icon: "u-list.svg",
   },
   {
-    name: "o-list",
+    name: "numbered-list",
+    type: "block",
     icon: "o-list.svg",
   },
 ];
