@@ -11,7 +11,7 @@ const ArticleForm = () => {
   const imageRef = useRef<HTMLInputElement>(null);
   const imageDescRef = useRef<HTMLInputElement>(null);
   const minRef = useRef<HTMLInputElement>(null);
-  const dateRef = useRef<HTMLInputElement>(null);
+  const dateRef = useRef<any>(null);
   const categoryRef = useRef<HTMLElement>(null);
   const bodyRef = useRef<HTMLElement>(null);
   const metadescriptionRef = useRef<HTMLInputElement>(null);
@@ -19,16 +19,14 @@ const ArticleForm = () => {
 
   const handleSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const form = event.currentTarget;
-
-    console.log(bodyRef);
+    console.log();
 
     const formData = {
       title: titleRef?.current?.value,
       image: imageRef?.current?.value,
       imageDesc: imageDescRef?.current?.value,
       min: minRef?.current?.value,
-      date: dateRef?.current?.value,
+      date: dateRef?.current?.props?.selected,
       category: categoryRef?.current?.textContent,
       body: bodyRef?.current?.textContent,
       metadescription: metadescriptionRef?.current?.value,
